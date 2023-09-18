@@ -1,6 +1,7 @@
 USE [Condos]
 GO
 /****** Object:  Table [dbo].[GitHubTest]    Script Date: 9/18/2023 10:13:29 AM ******/
+--Lookin' good!
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
