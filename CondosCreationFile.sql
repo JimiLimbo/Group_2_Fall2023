@@ -4,7 +4,7 @@ GO
 --Small change
 CREATE DATABASE [Condos]
 GO
-
+--More changes
 USE [Condos]
 GO
 
