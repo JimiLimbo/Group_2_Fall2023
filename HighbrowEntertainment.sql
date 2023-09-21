@@ -74,6 +74,8 @@ CREATE TABLE Engagements(
 	EngagementKey VARCHAR(6) NOT NULL,
 	EngStartDate DATE,
 	EngEndDate DATE,
+	EngStartTime TIME,
+	EngEndTime TIME,
 	EngContractPrice DECIMAL(8,2),
 	CustomerKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Customers(CustomerKey),
 	AgentKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Agents(AgentKey),
