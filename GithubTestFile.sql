@@ -1,0 +1,7 @@
+CREATE TABLE TestTable
+(
+	GroupKey VARCHAR(4) NOT NULL,
+	MemberKey VARCHAR(4) NOT NULL,
+	CONSTRAINT FK_GroupKey FOREIGN KEY (GroupKey) REFERENCES Groups(GroupKey),
+	CONSTRAINT FK_MemberKey FOREIGN KEY (MemberKey) REFERENCES GroupStyle(MemberKey)
+);
