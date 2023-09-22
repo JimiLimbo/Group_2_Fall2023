@@ -80,7 +80,8 @@ CREATE TABLE Engagements(
 	CustomerKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Customers(CustomerKey),
 	AgentKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Agents(AgentKey),
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
-	CONSTRAINT PK_EngagementKey PRIMARY KEY (EngagementKey)
+	CONSTRAINT PK_EngagementKey PRIMARY KEY (EngagementKey),
+	CONSTRAINT CHK_Date CHECK (EngEndDate >= EngStartDate OR EngEndDate IS NULL)
 );
 GO
 
