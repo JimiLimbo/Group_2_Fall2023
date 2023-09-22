@@ -11,13 +11,13 @@ GO
 --table creation
 CREATE TABLE Agents(
 	AgentKey VARCHAR(4) NOT NULL,
-	AgentFirstName CHAR(35),
-	AgentLastName CHAR(35),
-	AgentAddress CHAR(40),
-	AgentCity CHAR(35),
-	AgentState CHAR(2),
-	AgentZip CHAR(5),
-	AgentPhone CHAR(15),
+	AgentFirstName VARCHAR(35),
+	AgentLastName VARCHAR(35),
+	AgentAddress VARCHAR(40),
+	AgentCity VARCHAR(35),
+	AgentState VARCHAR(2),
+	AgentZip VARCHAR(5),
+	AgentPhone VARCHAR(15),
 	AgentDateHired DATE,
 	AgentSalary DECIMAL(9,2),
 	AgentCommissionRate DECIMAL(4,3),
@@ -34,12 +34,12 @@ GO
 
 CREATE TABLE Customers(
 	CustomerKey VARCHAR(4) NOT NULL,
-	CustFirstName CHAR(35),
-	CustLastName CHAR(35),
-	CustStreetAddress CHAR(40),
-	CustCity CHAR(35),
-	CustState CHAR(2),
-	CustZip CHAR(5),
+	CustFirstName VARCHAR(35),
+	CustLastName VARCHAR(35),
+	CustStreetAddress VARCHAR(40),
+	CustCity VARCHAR(35),
+	CustState VARCHAR(2),
+	CustZip VARCHAR(5),
 	CONSTRAINT PK_CustomerKey PRIMARY KEY (CustomerKey)
 );
 GO
@@ -80,7 +80,8 @@ CREATE TABLE Engagements(
 	CustomerKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Customers(CustomerKey),
 	AgentKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Agents(AgentKey),
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
-	CONSTRAINT PK_EngagementKey PRIMARY KEY (EngagementKey)
+	CONSTRAINT PK_EngagementKey PRIMARY KEY (EngagementKey),
+	CONSTRAINT CK_EngDates CHECK (EngEndDate >= EngStartDate OR EngEndDate IS NULL)
 );
 GO
 
@@ -100,7 +101,8 @@ GO
 CREATE TABLE GroupStyle(
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
 	StyleKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES MusicStyle(StyleKey),
-	StyleStrength TINYINT
+	StyleStrength TINYINT,
+	CONSTRAINT UNIQUE_GroupKey_StyleStrength UNIQUE(GroupKey, StyleStrength)
 );
 GO
 
