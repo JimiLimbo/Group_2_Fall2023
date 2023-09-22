@@ -88,6 +88,7 @@ GO
 CREATE TABLE GroupMember(
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
 	MemberKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Members(MemberKey)
+	CONSTRAINT PK_GroupMember PRIMARY KEY (GroupKey,MemberKey)
 );
 GO
 
@@ -95,6 +96,7 @@ CREATE TABLE CustomerPreference(
 	CustomerKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Customers(CustomerKey),
 	StyleKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES MusicStyle(StyleKey),
 	StylePreferenceRating TINYINT
+	CONSTRAINT PK_CustomerPreference PRIMARY KEY (CustomerKey,StyleKey)
 );
 GO
 
@@ -102,6 +104,7 @@ CREATE TABLE GroupStyle(
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
 	StyleKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES MusicStyle(StyleKey),
 	StyleStrength TINYINT
+	CONSTRAINT PK_GroupStyle PRIMARY KEY (GroupKey,StyleKey)
 );
 GO
 
