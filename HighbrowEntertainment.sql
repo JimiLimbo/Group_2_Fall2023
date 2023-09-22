@@ -104,7 +104,8 @@ CREATE TABLE GroupStyle(
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
 	StyleKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES MusicStyle(StyleKey),
 	StyleStrength TINYINT
-	CONSTRAINT PK_GroupStyle PRIMARY KEY (GroupKey,StyleKey)
+	CONSTRAINT PK_GroupStyle PRIMARY KEY (GroupKey,StyleKey),
+	CONSTRAINT UniqueRankingPerGroup UNIQUE(GroupKey, StyleStrength)
 );
 GO
 
