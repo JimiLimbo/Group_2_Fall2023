@@ -302,8 +302,7 @@ VALUES ('E00002', '2022-09-01', '2022-09-05', '13:00:00', '15:00:00', 200, 'C006
 GO
 
 INSERT INTO Members(MemberKey, MemberFirstName, MemberLastName, MemberPhone, MemberGender)
-VALUES
-		('M001', 'David', 'Hamilton', '555-2701', 'M'),
+VALUES  ('M001', 'David', 'Hamilton', '555-2701', 'M'),
 		('M002', 'Suzanne', 'Viescas', '555-2686', 'F'),
 		('M003', 'Gary', 'Hallmark', '555-2676', 'M'),
 		('M004', 'Jeffrey', 'Smith', '555-2596', 'M'),
@@ -331,8 +330,7 @@ VALUES
 GO
 
 INSERT INTO GroupMember(GroupKey, MemberKey)
-VALUES
-		('G001', 'M006'),
+VALUES  ('G001', 'M006'),
 		('G001', 'M007'),
 		('G001', 'M018'),
 		('G002', 'M020'),
@@ -375,8 +373,7 @@ VALUES
 GO
 
 INSERT INTO CustomerPreference(CustomerKey, StyleKey, StylePreferenceRating)
-VALUES
-		('C001', 'S010', 2),
+VALUES  ('C001', 'S010', 2),
 		('C001', 'S022', 1),
 		('C002', 'S003', 1),
 		('C002', 'S008', 2),
@@ -415,8 +412,7 @@ VALUES
 GO
 
 INSERT INTO GroupStyle(GroupKey, StyleKey, StyleStrength)
-VALUES
-		('G001', 'S010', 2),
+VALUES  ('G001', 'S010', 2),
 		('G001', 'S020', 1),
 		('G001', 'S021', 3),
 		('G002', 'S017', 2),
