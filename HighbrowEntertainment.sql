@@ -55,8 +55,9 @@ CREATE TABLE Groups(
 	GroupPhone VARCHAR(15),
 	GroupWebpage VARCHAR(150) DEFAULT('No Page'),
 	GroupEmail VARCHAR(75) DEFAULT('No Email'),
-	DateEntered DATE,
-	CONSTRAINT PK_GroupKey PRIMARY KEY (GroupKey)
+	GroupDateEntered DATE,
+	CONSTRAINT PK_GroupKey PRIMARY KEY (GroupKey),
+    CONSTRAINT CK_GroupDateEntered CHECK (GroupDateEntered <= GETDATE())
 );
 GO
 
@@ -66,7 +67,9 @@ CREATE TABLE Members(
 	MemberLastName VARCHAR(35),
 	MemberPhone VARCHAR(15),
 	MemberGender VARCHAR(1),
-	CONSTRAINT PK_MemberKey PRIMARY KEY (MemberKey)
+	CONSTRAINT PK_MemberKey PRIMARY KEY (MemberKey),
+	CONSTRAINT CK_MemberGender CHECK (MemberGender IN ('M', 'F') OR MemberGender IS NULL)
+
 );
 GO
 
@@ -94,14 +97,17 @@ GO
 CREATE TABLE CustomerPreference(
 	CustomerKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Customers(CustomerKey),
 	StyleKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES MusicStyle(StyleKey),
-	StylePreferenceRating TINYINT
+	StylePreferenceRating TINYINT NOT NULL,
+    CONSTRAINT CK_StylePreferenceRating CHECK (StylePreferenceRating IN (1, 2, 3))
+
 );
 GO
 
 CREATE TABLE GroupStyle(
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
 	StyleKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES MusicStyle(StyleKey),
-	StyleStrength TINYINT,
+	StyleStrength TINYINT NOT NULL,
+	CONSTRAINT CK_StyleStrength CHECK (StyleStrength IN (1, 2, 3)),
 	CONSTRAINT UNIQUE_GroupKey_StyleStrength UNIQUE(GroupKey, StyleStrength)
 );
 GO
