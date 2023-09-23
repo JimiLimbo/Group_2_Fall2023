@@ -15,8 +15,8 @@ CREATE TABLE Agents(
 	AgentLastName VARCHAR(35),
 	AgentAddress VARCHAR(40),
 	AgentCity VARCHAR(35),
-	AgentState VARCHAR(2),
-	AgentZip VARCHAR(5),
+	AgentState CHAR(2),
+	AgentZip CHAR(5),
 	AgentPhone VARCHAR(15),
 	AgentDateHired DATE,
 	AgentSalary DECIMAL(9,2),
@@ -38,8 +38,8 @@ CREATE TABLE Customers(
 	CustLastName VARCHAR(35),
 	CustStreetAddress VARCHAR(40),
 	CustCity VARCHAR(35),
-	CustState VARCHAR(2),
-	CustZip VARCHAR(5),
+	CustState CHAR(2),
+	CustZip CHAR(5),
 	CONSTRAINT PK_CustomerKey PRIMARY KEY (CustomerKey)
 );
 GO
@@ -50,8 +50,8 @@ CREATE TABLE Groups(
 	GroupSSN VARCHAR(11),
 	GroupStreetAddress VARCHAR(40),
 	GroupCity VARCHAR(35),
-	GroupState VARCHAR(2),
-	GroupZip VARCHAR(5),
+	GroupState CHAR(2),
+	GroupZip CHAR(5),
 	GroupPhone VARCHAR(15),
 	GroupWebpage VARCHAR(150) DEFAULT('No Page'),
 	GroupEmail VARCHAR(75) DEFAULT('No Email'),
