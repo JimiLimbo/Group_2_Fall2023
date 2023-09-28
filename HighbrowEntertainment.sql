@@ -55,8 +55,7 @@ CREATE TABLE Groups(
 	GroupPhone VARCHAR(15),
 	GroupWebpage VARCHAR(150),
 	GroupEmail VARCHAR(75),
-	CONSTRAINT PK_GroupKey PRIMARY KEY (GroupKey),
-    CONSTRAINT CK_GroupDateEntered CHECK (GroupDateEntered <= GETDATE())
+	CONSTRAINT PK_GroupKey PRIMARY KEY (GroupKey)
 );
 GO
 
