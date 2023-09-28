@@ -126,28 +126,13 @@ BEGIN
   WHERE E.GroupKey = I.GroupKey
     AND E.EngagementKey != I.EngagementKey
     AND (
-      (
-        E.EngStartDate = I.EngStartDate AND E.EngEndDate = I.EngEndDate
-        AND (
-          (E.EngStartTime < E.EngEndTime AND I.EngStartTime < I.EngEndTime AND I.EngStartTime BETWEEN E.EngStartTime AND E.EngEndTime)
-          OR
-          (E.EngStartTime > E.EngEndTime AND NOT (I.EngEndTime <= E.EngStartTime OR I.EngStartTime >= E.EngEndTime))
-          OR
-          (I.EngStartTime >= I.EngEndTime AND NOT (I.EngEndTime <= E.EngStartTime OR I.EngStartTime >= E.EngEndTime))
-          OR
-          (E.EngStartTime = E.EngEndTime)
-          OR
-          (I.EngStartTime = I.EngEndTime)
-        )
-      )
+      (CAST(CONVERT(VARCHAR, E.EngStartDate, 112) + ' ' + CONVERT(VARCHAR, E.EngStartTime, 108) AS DATETIME) 
+        BETWEEN CAST(CONVERT(VARCHAR, I.EngStartDate, 112) + ' ' + CONVERT(VARCHAR, I.EngStartTime, 108) AS DATETIME)
+        AND CAST(CONVERT(VARCHAR, I.EngEndDate, 112) + ' ' + CONVERT(VARCHAR, I.EngEndTime, 108) AS DATETIME))
       OR
-      (I.EngStartDate BETWEEN E.EngStartDate AND E.EngEndDate)
-      OR
-      (I.EngEndDate BETWEEN E.EngStartDate AND E.EngEndDate)
-      OR
-      (E.EngStartDate BETWEEN I.EngStartDate AND I.EngEndDate)
-      OR
-      (E.EngEndDate BETWEEN I.EngStartDate AND I.EngEndDate)
+      (CAST(CONVERT(VARCHAR, E.EngEndDate, 112) + ' ' + CONVERT(VARCHAR, E.EngEndTime, 108) AS DATETIME)
+        BETWEEN CAST(CONVERT(VARCHAR, I.EngStartDate, 112) + ' ' + CONVERT(VARCHAR, I.EngStartTime, 108) AS DATETIME)
+        AND CAST(CONVERT(VARCHAR, I.EngEndDate, 112) + ' ' + CONVERT(VARCHAR, I.EngEndTime, 108) AS DATETIME))
     )
 
   IF @doubleBooked > 0
@@ -157,6 +142,7 @@ BEGIN
   END
 END
 GO
+
 
 
 
@@ -223,20 +209,19 @@ VALUES ('C001', 'Doris', 'Hartwig', '4726 11th Ave. N.E.', 'Seattle', 'WA', '981
 GO
 
 INSERT INTO Groups(GroupKey, GroupStageName, GroupTIN, GroupStreetAddress, GroupCity, GroupState, GroupZip, GroupPhone, GroupWebpage, GroupEmail, GroupDateEntered)
-VALUES ('G001', 'Carol Peacock Trio', '01-888-90-1121', '4110 Old Redmond Rd.', 'Redmond', 'WA', '98052', '555-2691', 'www.cptrio.com', 'carolp@cptrio.com', '1997-05-24'),
-	   ('G002', 'Topazz', '01-888-50-1061', '16 Maple Lane', 'Auburn', 'WA', '98002', '555-2591', 'www.topazz.com', 'No Email', '1996-02-14'),
-	   ('G003', 'JV & the Deep Six', '01-888-18-1013', '15127 NE', 'Redmond', 'WA', '98052', '555-2511', 'www.jvd6.com', 'jv@myspring.com', '1998-03-18'),
-	   ('G004', 'Jim Glynn', '01-888-26-1025', '13920 S.E. 40th Street', 'Bellevue', 'WA', '98009', '555-2531', 'No Page', 'No Email', '1996-04-01'),
-	   ('G005', 'Jazz Persuasion', '01-888-30-1031', '233 West Valley Hwy', 'Bellevue', 'WA', '98005', '555-2541', 'www.jazzper.com', 'No Email', '1997-05-12'),
-	   ('G006', 'Modern Dance', '01-888-66-1085', 'Route 2, Box 203B', 'Woodinville', 'WA', '98072', '555-2631', 'www.moderndance.com', 'mikeh@moderndance.com', '1995-05-16'),
-	   ('G007', 'Coldwater Cattle Company', '01-888-38-1043', '4726 - 11th Ave. N.E.', 'Seattle', 'WA', '98105', '555-2561', 'www.coldwatercows.com', 'No Email', '1995-11-30'),
-	   ('G008', 'Country Feeling', '01-888-98-1133', 'PO Box 223311', 'Seattle', 'WA', '98125', '555-2711', 'No Page', 'No Email', '1996-02-28'),
-	   ('G009', 'Katherine Ehrlich', '01-888-61-1103', '777 Fenexet Blvd', 'Woodinville', 'WA', '98072', '555-0399', 'No Page', 'ke@mzo.com', '1998-09-13'),
-	   ('G010', 'Saturday Revue', '01-888-64-1109', '3887 Easy Street', 'Seattle', 'WA', '98125', '555-0039', 'www.satrevue.com', 'edz@coolness.com', '1995-01-20'),
-	   ('G011', 'Julia Schnebly', '01-888-65-1111', '2343 Harmony Lane', 'Seattle', 'WA', '99837', '555-9936', 'No Page', 'No Email', '1996-04-12'),
-	   ('G012', 'Susan McLain', '01-888-70-1121', '511 Lenora Ave', 'Bellevue', 'WA', '98006', '555-2301', 'www.greensleeves.com', 'susan@gs.com', '1998-10-12'),
-	   ('G013', 'Caroline Coie Cuartet', '01-888-71-1123', '298 Forest Lane', 'Auburn', 'WA', '98002', '555-2306', 'No Page', 'carolinec@willow.com', '1997-07-11');
-GO
+VALUES ('G001', 'Carol Peacock Trio', '01-888-90-1121', '4110 Old Redmond Rd.', 'Redmond', 'WA', '98052', '253-555-2691', 'www.cptrio.com', 'carolp@cptrio.com', '1997-05-24'),
+	   ('G002', 'Topazz', '01-888-50-1061', '16 Maple Lane', 'Auburn', 'WA', '98002', '253-555-2591', 'www.topazz.com', '', '1996-02-14'),
+	   ('G003', 'JV & the Deep Six', '01-888-18-1013', '15127 NE', 'Redmond', 'WA', '98052', '253-555-2511', 'www.jvd6.com', 'jv@myspring.com', '1998-03-18'),
+	   ('G004', 'Jim Glynn', '01-888-26-1025', '13920 S.E. 40th Street', 'Bellevue', 'WA', '98009', '253-555-2531', '', '', '1996-04-01'),
+	   ('G005', 'Jazz Persuasion', '01-888-30-1031', '233 West Valley Hwy', 'Bellevue', 'WA', '98005', '253-555-2541', 'www.jazzper.com', '', '1997-05-12'),
+	   ('G006', 'Modern Dance', '01-888-66-1085', 'Route 2, Box 203B', 'Woodinville', 'WA', '98072', '253-555-2631', 'www.moderndance.com', 'mikeh@moderndance.com', '1995-05-16'),
+	   ('G007', 'Coldwater Cattle Company', '01-888-38-1043', '4726 - 11th Ave. N.E.', 'Seattle', 'WA', '98105', '555-2561', 'www.coldwatercows.com', '', '1995-11-30'),
+	   ('G008', 'Country Feeling', '01-888-98-1133', 'PO Box 223311', 'Seattle', 'WA', '98125', '253-555-2711', '', '', '1996-02-28'),
+	   ('G009', 'Katherine Ehrlich', '01-888-61-1103', '777 Fenexet Blvd', 'Woodinville', 'WA', '98072', '253-555-0399', '', 'ke@mzo.com', '1998-09-13'),
+	   ('G010', 'Saturday Revue', '01-888-64-1109', '3887 Easy Street', 'Seattle', 'WA', '98125', '253-555-0039', 'www.satrevue.com', 'edz@coolness.com', '1995-01-20'),
+	   ('G011', 'Julia Schnebly', '01-888-65-1111', '2343 Harmony Lane', 'Seattle', 'WA', '99837', '253-555-9936', '', '', '1996-04-12'),
+	   ('G012', 'Susan McLain', '01-888-70-1121', '511 Lenora Ave', 'Bellevue', 'WA', '98006', '253-555-2301', 'www.greensleeves.com', 'susan@gs.com', '1998-10-12'),
+	   ('G013', 'Caroline Coie Cuartet', '01-888-71-1123', '298 Forest Lane', 'Auburn', 'WA', '98002', '253-555-2306', '', 'carolinec@willow.com', '1997-07-11');
 
 INSERT INTO Engagements(EngagementKey, EngStartDate, EngEndDate, EngStartTime, EngEndTime, EngContractPrice, CustomerKey, AgentKey, GroupKey)
 VALUES ('E00001', '2022-09-01', '2022-09-05', '13:00:00', '15:00:00', 200, 'C006', 'A004', 'G004'),
