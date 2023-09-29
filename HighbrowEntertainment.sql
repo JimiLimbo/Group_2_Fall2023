@@ -208,9 +208,231 @@ VALUES ('G001', 'Carol Peacock Trio', '01-888-90-1121', '4110 Old Redmond Rd.', 
 	   ('G013', 'Caroline Coie Cuartet', '01-888-71-1123', '298 Forest Lane', 'Auburn', 'WA', '98002', '253-555-2306', NULL, 'carolinec@willow.com');
 GO
 
--- INSERT INTO Engagements(EngagementKey, EngStartDateTime, EngEndDateTime, EngContractPrice, CustomerKey, AgentKey, GroupKey)
--- VALUES 
--- GO
+USE [HighbrowEntertainment]
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00001', CAST(N'2022-09-01T13:00:00.000' AS DateTime), CAST(N'2022-09-05T15:00:00.000' AS DateTime), CAST(200.0000 AS Decimal(14, 4)), N'C006', N'A004', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00002', CAST(N'2022-09-10T13:00:00.000' AS DateTime), CAST(N'2022-09-15T15:00:00.000' AS DateTime), CAST(590.0000 AS Decimal(14, 4)), N'C001', N'A003', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00003', CAST(N'2022-09-11T20:00:00.000' AS DateTime), CAST(N'2022-09-17T00:00:00.000' AS DateTime), CAST(470.0000 AS Decimal(14, 4)), N'C007', N'A003', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00004', CAST(N'2022-09-11T16:00:00.000' AS DateTime), CAST(N'2022-09-14T19:00:00.000' AS DateTime), CAST(1130.0000 AS Decimal(14, 4)), N'C006', N'A005', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00005', CAST(N'2022-09-10T15:00:00.000' AS DateTime), CAST(N'2022-09-14T21:00:00.000' AS DateTime), CAST(2300.0000 AS Decimal(14, 4)), N'C014', N'A007', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00006', CAST(N'2022-09-11T17:00:00.000' AS DateTime), CAST(N'2022-09-18T20:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C004', N'A004', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00007', CAST(N'2022-09-18T20:00:00.000' AS DateTime), CAST(N'2022-09-25T23:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C006', N'A003', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00008', CAST(N'2022-09-18T19:00:00.000' AS DateTime), CAST(N'2022-09-28T21:00:00.000' AS DateTime), CAST(1370.0000 AS Decimal(14, 4)), N'C010', N'A002', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00009', CAST(N'2022-09-17T13:00:00.000' AS DateTime), CAST(N'2022-09-26T17:00:00.000' AS DateTime), CAST(3650.0000 AS Decimal(14, 4)), N'C005', N'A003', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00010', CAST(N'2022-09-15T18:00:00.000' AS DateTime), CAST(N'2022-09-17T00:00:00.000' AS DateTime), CAST(950.0000 AS Decimal(14, 4)), N'C005', N'A004', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00011', CAST(N'2022-09-18T18:00:00.000' AS DateTime), CAST(N'2022-09-26T22:00:00.000' AS DateTime), CAST(1670.0000 AS Decimal(14, 4)), N'C014', N'A008', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00012', CAST(N'2022-09-17T20:00:00.000' AS DateTime), CAST(N'2022-09-20T23:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C003', N'A001', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00013', CAST(N'2022-09-24T16:00:00.000' AS DateTime), CAST(N'2022-09-29T22:00:00.000' AS DateTime), CAST(2750.0000 AS Decimal(14, 4)), N'C001', N'A001', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00014', CAST(N'2022-09-24T17:00:00.000' AS DateTime), CAST(N'2022-09-29T19:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C007', N'A001', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00015', CAST(N'2022-10-02T20:00:00.000' AS DateTime), CAST(N'2022-10-06T01:00:00.000' AS DateTime), CAST(1550.0000 AS Decimal(14, 4)), N'C010', N'A005', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00016', CAST(N'2022-09-29T18:00:00.000' AS DateTime), CAST(N'2022-10-02T20:00:00.000' AS DateTime), CAST(530.0000 AS Decimal(14, 4)), N'C002', N'A008', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00017', CAST(N'2022-09-29T20:00:00.000' AS DateTime), CAST(N'2022-10-05T23:00:00.000' AS DateTime), CAST(365.0000 AS Decimal(14, 4)), N'C009', N'A008', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00018', CAST(N'2022-09-30T12:00:00.000' AS DateTime), CAST(N'2022-10-03T16:00:00.000' AS DateTime), CAST(1490.0000 AS Decimal(14, 4)), N'C005', N'A001', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00019', CAST(N'2022-09-30T12:00:00.000' AS DateTime), CAST(N'2022-10-05T15:00:00.000' AS DateTime), CAST(590.0000 AS Decimal(14, 4)), N'C004', N'A005', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00020', CAST(N'2022-09-30T20:00:00.000' AS DateTime), CAST(N'2022-10-01T00:00:00.000' AS DateTime), CAST(290.0000 AS Decimal(14, 4)), N'C012', N'A004', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00021', CAST(N'2022-10-01T12:00:00.000' AS DateTime), CAST(N'2022-10-07T18:00:00.000' AS DateTime), CAST(1940.0000 AS Decimal(14, 4)), N'C001', N'A004', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00022', CAST(N'2022-10-09T17:00:00.000' AS DateTime), CAST(N'2022-10-14T22:00:00.000' AS DateTime), CAST(950.0000 AS Decimal(14, 4)), N'C001', N'A006', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00023', CAST(N'2022-10-07T12:00:00.000' AS DateTime), CAST(N'2022-10-12T16:00:00.000' AS DateTime), CAST(2210.0000 AS Decimal(14, 4)), N'C015', N'A007', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00024', CAST(N'2022-10-06T17:00:00.000' AS DateTime), CAST(N'2022-10-15T22:00:00.000' AS DateTime), CAST(3800.0000 AS Decimal(14, 4)), N'C003', N'A004', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00025', CAST(N'2022-10-06T17:00:00.000' AS DateTime), CAST(N'2022-10-08T22:00:00.000' AS DateTime), CAST(275.0000 AS Decimal(14, 4)), N'C009', N'A005', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00026', CAST(N'2022-10-07T16:00:00.000' AS DateTime), CAST(N'2022-10-16T20:00:00.000' AS DateTime), CAST(2450.0000 AS Decimal(14, 4)), N'C002', N'A008', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00027', CAST(N'2022-10-07T13:00:00.000' AS DateTime), CAST(N'2022-10-16T15:00:00.000' AS DateTime), CAST(1250.0000 AS Decimal(14, 4)), N'C010', N'A007', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00028', CAST(N'2022-10-14T16:00:00.000' AS DateTime), CAST(N'2022-10-20T18:00:00.000' AS DateTime), CAST(680.0000 AS Decimal(14, 4)), N'C004', N'A008', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00029', CAST(N'2022-10-14T19:00:00.000' AS DateTime), CAST(N'2022-10-15T23:00:00.000' AS DateTime), CAST(410.0000 AS Decimal(14, 4)), N'C005', N'A008', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00030', CAST(N'2022-10-13T18:00:00.000' AS DateTime), CAST(N'2022-10-23T22:00:00.000' AS DateTime), CAST(710.0000 AS Decimal(14, 4)), N'C014', N'A003', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00031', CAST(N'2022-10-13T14:00:00.000' AS DateTime), CAST(N'2022-10-19T19:00:00.000' AS DateTime), CAST(2675.0000 AS Decimal(14, 4)), N'C006', N'A003', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00032', CAST(N'2022-10-14T14:00:00.000' AS DateTime), CAST(N'2022-10-18T20:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C013', N'A004', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00033', CAST(N'2022-10-20T18:00:00.000' AS DateTime), CAST(N'2022-10-28T21:00:00.000' AS DateTime), CAST(860.0000 AS Decimal(14, 4)), N'C013', N'A003', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00034', CAST(N'2022-10-20T17:00:00.000' AS DateTime), CAST(N'2022-10-26T22:00:00.000' AS DateTime), CAST(2150.0000 AS Decimal(14, 4)), N'C002', N'A001', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00035', CAST(N'2022-10-21T14:00:00.000' AS DateTime), CAST(N'2022-10-21T16:00:00.000' AS DateTime), CAST(140.0000 AS Decimal(14, 4)), N'C001', N'A008', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00036', CAST(N'2022-10-22T14:00:00.000' AS DateTime), CAST(N'2022-10-26T19:00:00.000' AS DateTime), CAST(1925.0000 AS Decimal(14, 4)), N'C006', N'A003', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00037', CAST(N'2022-10-21T14:00:00.000' AS DateTime), CAST(N'2022-10-28T18:00:00.000' AS DateTime), CAST(530.0000 AS Decimal(14, 4)), N'C015', N'A001', N'G012')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00038', CAST(N'2022-10-28T15:00:00.000' AS DateTime), CAST(N'2022-11-05T17:00:00.000' AS DateTime), CAST(1400.0000 AS Decimal(14, 4)), N'C009', N'A004', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00039', CAST(N'2022-11-05T16:00:00.000' AS DateTime), CAST(N'2022-11-06T22:00:00.000' AS DateTime), CAST(950.0000 AS Decimal(14, 4)), N'C002', N'A001', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00040', CAST(N'2022-11-13T12:00:00.000' AS DateTime), CAST(N'2022-11-19T14:00:00.000' AS DateTime), CAST(680.0000 AS Decimal(14, 4)), N'C014', N'A005', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00041', CAST(N'2022-11-13T20:00:00.000' AS DateTime), CAST(N'2022-11-14T01:00:00.000' AS DateTime), CAST(650.0000 AS Decimal(14, 4)), N'C013', N'A003', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00042', CAST(N'2022-11-13T16:00:00.000' AS DateTime), CAST(N'2022-11-14T21:00:00.000' AS DateTime), CAST(650.0000 AS Decimal(14, 4)), N'C010', N'A003', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00043', CAST(N'2022-11-11T17:00:00.000' AS DateTime), CAST(N'2022-11-12T19:00:00.000' AS DateTime), CAST(350.0000 AS Decimal(14, 4)), N'C002', N'A005', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00044', CAST(N'2022-11-19T20:00:00.000' AS DateTime), CAST(N'2022-11-26T02:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C002', N'A003', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00045', CAST(N'2022-11-25T14:00:00.000' AS DateTime), CAST(N'2022-11-28T19:00:00.000' AS DateTime), CAST(1550.0000 AS Decimal(14, 4)), N'C010', N'A003', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00046', CAST(N'2022-12-01T17:00:00.000' AS DateTime), CAST(N'2022-12-04T23:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C001', N'A002', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00047', CAST(N'2022-12-01T15:00:00.000' AS DateTime), CAST(N'2022-12-04T19:00:00.000' AS DateTime), CAST(290.0000 AS Decimal(14, 4)), N'C004', N'A006', N'G012')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00048', CAST(N'2022-12-02T13:00:00.000' AS DateTime), CAST(N'2022-12-04T17:00:00.000' AS DateTime), CAST(230.0000 AS Decimal(14, 4)), N'C010', N'A008', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00049', CAST(N'2022-12-03T17:00:00.000' AS DateTime), CAST(N'2022-12-10T20:00:00.000' AS DateTime), CAST(410.0000 AS Decimal(14, 4)), N'C015', N'A008', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00050', CAST(N'2022-12-09T20:00:00.000' AS DateTime), CAST(N'2022-12-10T01:00:00.000' AS DateTime), CAST(500.0000 AS Decimal(14, 4)), N'C003', N'A002', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00051', CAST(N'2022-12-18T14:00:00.000' AS DateTime), CAST(N'2022-12-21T16:00:00.000' AS DateTime), CAST(650.0000 AS Decimal(14, 4)), N'C009', N'A003', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00052', CAST(N'2022-12-25T14:00:00.000' AS DateTime), CAST(N'2023-01-03T16:00:00.000' AS DateTime), CAST(1250.0000 AS Decimal(14, 4)), N'C007', N'A003', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00053', CAST(N'2022-12-22T20:00:00.000' AS DateTime), CAST(N'2022-12-29T02:00:00.000' AS DateTime), CAST(2930.0000 AS Decimal(14, 4)), N'C005', N'A005', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00054', CAST(N'2022-12-24T16:00:00.000' AS DateTime), CAST(N'2022-12-29T22:00:00.000' AS DateTime), CAST(1670.0000 AS Decimal(14, 4)), N'C009', N'A001', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00055', CAST(N'2022-12-22T15:00:00.000' AS DateTime), CAST(N'2022-12-23T18:00:00.000' AS DateTime), CAST(500.0000 AS Decimal(14, 4)), N'C004', N'A007', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00056', CAST(N'2022-12-23T13:00:00.000' AS DateTime), CAST(N'2022-12-26T15:00:00.000' AS DateTime), CAST(410.0000 AS Decimal(14, 4)), N'C010', N'A006', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00057', CAST(N'2022-12-22T14:00:00.000' AS DateTime), CAST(N'2022-12-27T17:00:00.000' AS DateTime), CAST(1670.0000 AS Decimal(14, 4)), N'C002', N'A001', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00058', CAST(N'2022-12-22T20:00:00.000' AS DateTime), CAST(N'2023-01-01T01:00:00.000' AS DateTime), CAST(875.0000 AS Decimal(14, 4)), N'C012', N'A004', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00059', CAST(N'2022-12-29T19:00:00.000' AS DateTime), CAST(N'2023-01-07T22:00:00.000' AS DateTime), CAST(1400.0000 AS Decimal(14, 4)), N'C014', N'A005', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00060', CAST(N'2023-01-01T13:00:00.000' AS DateTime), CAST(N'2023-01-06T15:00:00.000' AS DateTime), CAST(590.0000 AS Decimal(14, 4)), N'C004', N'A001', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00061', CAST(N'2023-01-01T17:00:00.000' AS DateTime), CAST(N'2023-01-11T20:00:00.000' AS DateTime), CAST(2525.0000 AS Decimal(14, 4)), N'C001', N'A007', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00062', CAST(N'2022-12-30T16:00:00.000' AS DateTime), CAST(N'2023-01-03T22:00:00.000' AS DateTime), CAST(500.0000 AS Decimal(14, 4)), N'C005', N'A007', N'G012')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00063', CAST(N'2022-12-30T17:00:00.000' AS DateTime), CAST(N'2023-01-04T20:00:00.000' AS DateTime), CAST(1670.0000 AS Decimal(14, 4)), N'C015', N'A005', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00064', CAST(N'2023-01-01T16:00:00.000' AS DateTime), CAST(N'2023-01-03T20:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C010', N'A004', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00065', CAST(N'2022-12-30T12:00:00.000' AS DateTime), CAST(N'2023-01-03T17:00:00.000' AS DateTime), CAST(1550.0000 AS Decimal(14, 4)), N'C006', N'A008', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00066', CAST(N'2022-12-31T17:00:00.000' AS DateTime), CAST(N'2023-01-01T21:00:00.000' AS DateTime), CAST(650.0000 AS Decimal(14, 4)), N'C002', N'A005', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00067', CAST(N'2023-01-01T13:00:00.000' AS DateTime), CAST(N'2023-01-09T17:00:00.000' AS DateTime), CAST(1130.0000 AS Decimal(14, 4)), N'C013', N'A004', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00068', CAST(N'2023-01-08T20:00:00.000' AS DateTime), CAST(N'2023-01-09T01:00:00.000' AS DateTime), CAST(950.0000 AS Decimal(14, 4)), N'C014', N'A008', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00069', CAST(N'2023-01-06T13:00:00.000' AS DateTime), CAST(N'2023-01-10T15:00:00.000' AS DateTime), CAST(650.0000 AS Decimal(14, 4)), N'C010', N'A002', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00070', CAST(N'2023-01-06T17:00:00.000' AS DateTime), CAST(N'2023-01-11T19:00:00.000' AS DateTime), CAST(230.0000 AS Decimal(14, 4)), N'C007', N'A003', N'G012')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00071', CAST(N'2023-01-06T14:00:00.000' AS DateTime), CAST(N'2023-01-08T19:00:00.000' AS DateTime), CAST(1175.0000 AS Decimal(14, 4)), N'C015', N'A004', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00072', CAST(N'2023-01-04T16:00:00.000' AS DateTime), CAST(N'2023-01-06T19:00:00.000' AS DateTime), CAST(275.0000 AS Decimal(14, 4)), N'C007', N'A006', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00073', CAST(N'2023-01-07T12:00:00.000' AS DateTime), CAST(N'2023-01-17T14:00:00.000' AS DateTime), CAST(1370.0000 AS Decimal(14, 4)), N'C004', N'A008', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00074', CAST(N'2023-01-06T14:00:00.000' AS DateTime), CAST(N'2023-01-07T16:00:00.000' AS DateTime), CAST(290.0000 AS Decimal(14, 4)), N'C003', N'A008', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00075', CAST(N'2023-01-08T20:00:00.000' AS DateTime), CAST(N'2023-01-09T02:00:00.000' AS DateTime), CAST(320.0000 AS Decimal(14, 4)), N'C006', N'A005', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00076', CAST(N'2023-01-05T13:00:00.000' AS DateTime), CAST(N'2023-01-12T19:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C009', N'A003', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00077', CAST(N'2023-01-12T19:00:00.000' AS DateTime), CAST(N'2023-01-16T00:00:00.000' AS DateTime), CAST(1925.0000 AS Decimal(14, 4)), N'C012', N'A006', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00078', CAST(N'2023-01-15T20:00:00.000' AS DateTime), CAST(N'2023-01-18T01:00:00.000' AS DateTime), CAST(1550.0000 AS Decimal(14, 4)), N'C010', N'A006', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00079', CAST(N'2023-01-22T15:00:00.000' AS DateTime), CAST(N'2023-01-31T17:00:00.000' AS DateTime), CAST(950.0000 AS Decimal(14, 4)), N'C009', N'A006', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00080', CAST(N'2023-01-19T17:00:00.000' AS DateTime), CAST(N'2023-01-19T21:00:00.000' AS DateTime), CAST(110.0000 AS Decimal(14, 4)), N'C012', N'A008', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00081', CAST(N'2023-01-20T20:00:00.000' AS DateTime), CAST(N'2023-01-27T02:00:00.000' AS DateTime), CAST(2930.0000 AS Decimal(14, 4)), N'C012', N'A002', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00082', CAST(N'2023-01-22T14:00:00.000' AS DateTime), CAST(N'2023-01-22T20:00:00.000' AS DateTime), CAST(14105.0000 AS Decimal(14, 4)), N'C005', N'A006', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00083', CAST(N'2023-01-19T12:00:00.000' AS DateTime), CAST(N'2023-01-23T18:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C015', N'A003', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00084', CAST(N'2023-01-22T14:00:00.000' AS DateTime), CAST(N'2023-01-30T18:00:00.000' AS DateTime), CAST(1670.0000 AS Decimal(14, 4)), N'C004', N'A005', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00085', CAST(N'2023-01-22T12:00:00.000' AS DateTime), CAST(N'2023-01-31T15:00:00.000' AS DateTime), CAST(2300.0000 AS Decimal(14, 4)), N'C013', N'A005', N'G007')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00086', CAST(N'2023-01-21T12:00:00.000' AS DateTime), CAST(N'2023-01-27T17:00:00.000' AS DateTime), CAST(575.0000 AS Decimal(14, 4)), N'C010', N'A004', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00087', CAST(N'2023-01-28T13:00:00.000' AS DateTime), CAST(N'2023-02-01T16:00:00.000' AS DateTime), CAST(1400.0000 AS Decimal(14, 4)), N'C010', N'A006', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00088', CAST(N'2023-01-27T12:00:00.000' AS DateTime), CAST(N'2023-02-01T17:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C002', N'A004', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00089', CAST(N'2023-01-29T15:00:00.000' AS DateTime), CAST(N'2023-02-01T18:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C003', N'A006', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00090', CAST(N'2023-01-29T16:00:00.000' AS DateTime), CAST(N'2023-01-30T21:00:00.000' AS DateTime), CAST(200.0000 AS Decimal(14, 4)), N'C007', N'A004', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00091', CAST(N'2023-02-02T18:00:00.000' AS DateTime), CAST(N'2023-02-04T00:00:00.000' AS DateTime), CAST(320.0000 AS Decimal(14, 4)), N'C004', N'A005', N'G012')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00092', CAST(N'2023-02-11T13:00:00.000' AS DateTime), CAST(N'2023-02-15T19:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C014', N'A005', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00093', CAST(N'2023-02-11T15:00:00.000' AS DateTime), CAST(N'2023-02-19T19:00:00.000' AS DateTime), CAST(1670.0000 AS Decimal(14, 4)), N'C006', N'A008', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00094', CAST(N'2023-02-12T15:00:00.000' AS DateTime), CAST(N'2023-02-14T18:00:00.000' AS DateTime), CAST(185.0000 AS Decimal(14, 4)), N'C012', N'A001', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00095', CAST(N'2023-02-19T18:00:00.000' AS DateTime), CAST(N'2023-02-24T22:00:00.000' AS DateTime), CAST(410.0000 AS Decimal(14, 4)), N'C015', N'A007', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00096', CAST(N'2023-02-19T12:00:00.000' AS DateTime), CAST(N'2023-02-28T17:00:00.000' AS DateTime), CAST(1550.0000 AS Decimal(14, 4)), N'C005', N'A001', N'G002')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00097', CAST(N'2023-02-19T12:00:00.000' AS DateTime), CAST(N'2023-02-22T18:00:00.000' AS DateTime), CAST(1490.0000 AS Decimal(14, 4)), N'C007', N'A005', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00098', CAST(N'2023-02-16T14:00:00.000' AS DateTime), CAST(N'2023-02-25T19:00:00.000' AS DateTime), CAST(800.0000 AS Decimal(14, 4)), N'C003', N'A006', N'G012')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00099', CAST(N'2023-02-18T19:00:00.000' AS DateTime), CAST(N'2023-02-19T00:00:00.000' AS DateTime), CAST(350.0000 AS Decimal(14, 4)), N'C014', N'A001', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00100', CAST(N'2023-02-19T18:00:00.000' AS DateTime), CAST(N'2023-02-28T21:00:00.000' AS DateTime), CAST(500.0000 AS Decimal(14, 4)), N'C012', N'A002', N'G004')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00101', CAST(N'2023-02-17T20:00:00.000' AS DateTime), CAST(N'2023-02-20T23:00:00.000' AS DateTime), CAST(950.0000 AS Decimal(14, 4)), N'C002', N'A007', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00102', CAST(N'2023-02-16T17:00:00.000' AS DateTime), CAST(N'2023-02-22T23:00:00.000' AS DateTime), CAST(2570.0000 AS Decimal(14, 4)), N'C004', N'A003', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00103', CAST(N'2023-02-24T15:00:00.000' AS DateTime), CAST(N'2023-02-27T19:00:00.000' AS DateTime), CAST(1010.0000 AS Decimal(14, 4)), N'C014', N'A005', N'G010')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00104', CAST(N'2023-02-25T16:00:00.000' AS DateTime), CAST(N'2023-02-28T20:00:00.000' AS DateTime), CAST(770.0000 AS Decimal(14, 4)), N'C013', N'A001', N'G001')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00105', CAST(N'2023-02-23T14:00:00.000' AS DateTime), CAST(N'2023-03-02T17:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C006', N'A001', N'G008')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00106', CAST(N'2023-02-23T13:00:00.000' AS DateTime), CAST(N'2023-02-28T15:00:00.000' AS DateTime), CAST(1130.0000 AS Decimal(14, 4)), N'C001', N'A003', N'G003')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00107', CAST(N'2023-02-24T18:00:00.000' AS DateTime), CAST(N'2023-03-03T20:00:00.000' AS DateTime), CAST(1010.0000 AS Decimal(14, 4)), N'C009', N'A006', N'G006')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00108', CAST(N'2023-02-24T20:00:00.000' AS DateTime), CAST(N'2023-02-28T22:00:00.000' AS DateTime), CAST(500.0000 AS Decimal(14, 4)), N'C010', N'A004', N'G005')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00109', CAST(N'2023-02-26T19:00:00.000' AS DateTime), CAST(N'2023-02-28T01:00:00.000' AS DateTime), CAST(320.0000 AS Decimal(14, 4)), N'C003', N'A004', N'G011')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00110', CAST(N'2023-02-24T17:00:00.000' AS DateTime), CAST(N'2023-03-05T21:00:00.000' AS DateTime), CAST(2450.0000 AS Decimal(14, 4)), N'C004', N'A005', N'G013')
+GO
+INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00111', CAST(N'2023-03-03T15:00:00.000' AS DateTime), CAST(N'2023-03-12T17:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C014', N'A001', N'G003')
+GO
+
 
 INSERT INTO Members (MemberKey, MemberFirstName, MemberLastName, MemberPhone, MemberGender)
 VALUES  ('M001', 'David', 'Hamilton', '253-555-2701', 'M'),
