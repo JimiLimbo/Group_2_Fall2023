@@ -11,48 +11,48 @@ GO
 --table creation
 CREATE TABLE Agents(
 	AgentKey VARCHAR(4) NOT NULL,
-	AgentFirstName VARCHAR(35),
-	AgentLastName VARCHAR(35),
-	AgentAddress VARCHAR(40),
-	AgentCity VARCHAR(35),
-	AgentState CHAR(2),
-	AgentZip CHAR(5),
-	AgentPhone VARCHAR(15),
-	AgentDateHired DATE,
-	AgentSalary DECIMAL(9,2),
-	AgentCommissionRate DECIMAL(4,3),
+	AgentFirstName VARCHAR(35) NOT NULL,
+	AgentLastName VARCHAR(35) NOT NULL,
+	AgentStreetAddress VARCHAR(40) NOT NULL,
+	AgentCity VARCHAR(35) NOT NULL,
+	AgentState CHAR(2) NOT NULL,
+	AgentZip CHAR(5) NOT NULL,
+	AgentPhone VARCHAR(15) NOT NULL,
+	AgentDateHired DATE NOT NULL,
+	AgentSalary DECIMAL(14,4) NOT NULL,
+	AgentCommissionRate DECIMAL(14,4) NOT NULL,
 	CONSTRAINT PK_AgentKey PRIMARY KEY (AgentKey)
 );
 GO
 
 CREATE TABLE MusicStyle(
 	StyleKey VARCHAR(4) NOT NULL,
-	StyleName VARCHAR(50),
+	StyleName VARCHAR(50) NOT NULL,
 	CONSTRAINT PK_StyleKey PRIMARY KEY (StyleKey)
 );
 GO
 
 CREATE TABLE Customers(
 	CustomerKey VARCHAR(4) NOT NULL,
-	CustFirstName VARCHAR(35),
-	CustLastName VARCHAR(35),
-	CustStreetAddress VARCHAR(40),
-	CustCity VARCHAR(35),
-	CustState CHAR(2),
-	CustZip CHAR(5),
+	CustFirstName VARCHAR(35) NOT NULL,
+	CustLastName VARCHAR(35) NOT NULL,
+	CustStreetAddress VARCHAR(40) NOT NULL,
+	CustCity VARCHAR(35) NOT NULL,
+	CustState CHAR(2) NOT NULL,
+	CustZip CHAR(5) NOT NULL,
 	CONSTRAINT PK_CustomerKey PRIMARY KEY (CustomerKey)
 );
 GO
 
 CREATE TABLE Groups(
 	GroupKey VARCHAR(4) NOT NULL,
-	GroupStageName VARCHAR(40),
-	GroupTIN VARCHAR(14),
-	GroupStreetAddress VARCHAR(40),
-	GroupCity VARCHAR(35),
-	GroupState CHAR(2),
-	GroupZip CHAR(5),
-	GroupPhone VARCHAR(15),
+	GroupStageName VARCHAR(40) NOT NULL,
+	GroupTIN VARCHAR(14) NOT NULL,
+	GroupStreetAddress VARCHAR(40) NOT NULL,
+	GroupCity VARCHAR(35) NOT NULL,
+	GroupState CHAR(2) NOT NULL,
+	GroupZip CHAR(5) NOT NULL,
+	GroupPhone VARCHAR(15) NOT NULL,
 	GroupWebpage VARCHAR(150),
 	GroupEmail VARCHAR(75),
 	CONSTRAINT PK_GroupKey PRIMARY KEY (GroupKey)
@@ -61,9 +61,9 @@ GO
 
 CREATE TABLE Members(
 	MemberKey VARCHAR(4) NOT NULL,
-	MemberFirstName VARCHAR(35),
-	MemberLastName VARCHAR(35),
-	MemberPhone VARCHAR(15),
+	MemberFirstName VARCHAR(35) NOT NULL,
+	MemberLastName VARCHAR(35) NOT NULL,
+	MemberPhone VARCHAR(15) NOT NULL,
 	MemberGender VARCHAR(1),
 	CONSTRAINT PK_MemberKey PRIMARY KEY (MemberKey),
 	CONSTRAINT CK_MemberGender CHECK (MemberGender IN ('M', 'F') OR MemberGender IS NULL)
@@ -73,11 +73,11 @@ GO
 
 CREATE TABLE Engagements(
 	EngagementKey VARCHAR(6) NOT NULL,
-	EngStartDate DATE,
-	EngEndDate DATE,
-	EngStartTime TIME,
-	EngEndTime TIME,
-	EngContractPrice DECIMAL(8,2),
+	EngStartDate DATE NOT NULL,
+	EngEndDate DATE NOT NULL,
+	EngStartTime TIME NOT NULL,
+	EngEndTime TIME NOT NULL,
+	EngContractPrice DECIMAL(14,4) NOT NULL,
 	CustomerKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Customers(CustomerKey),
 	AgentKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Agents(AgentKey),
 	GroupKey VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Groups(GroupKey),
@@ -111,7 +111,7 @@ CREATE TABLE GroupStyle(
 GO
 
 --add data
-INSERT INTO Agents(AgentKey, AgentFirstName, AgentLastName, AgentAddress, AgentCity, AgentState, AgentZip, AgentPhone, AgentDateHired, AgentSalary, AgentCommissionRate)
+INSERT INTO Agents(AgentKey, AgentFirstName, AgentLastName, AgentStreetAddress, AgentCity, AgentState, AgentZip, AgentPhone, AgentDateHired, AgentSalary, AgentCommissionRate)
 VALUES ('A001', 'William', 'Thompson', '122 Spring River Drive', 'Redmond', 'WA', '98053', '253-555-2681', '2018-05-10', 45000.00, 0.04),
 	   ('A002', 'Scott', 'Bishop', '66 Spring Valley Drive', 'Seattle', 'WA', '98125', '253-555-2666', '2019-01-31', 37000.00, 0.04),
 	   ('A003', 'Carol', 'Viescas', '667 Red River Road', 'Bellevue', 'WA', '98006', '253-555-2571', '2018-11-14', 40000.00, 0.05),
@@ -171,19 +171,18 @@ GO
 
 INSERT INTO Groups(GroupKey, GroupStageName, GroupTIN, GroupStreetAddress, GroupCity, GroupState, GroupZip, GroupPhone, GroupWebpage, GroupEmail)
 VALUES ('G001', 'Carol Peacock Trio', '01-888-90-1121', '4110 Old Redmond Rd.', 'Redmond', 'WA', '98052', '253-555-2691', 'www.cptrio.com', 'carolp@cptrio.com'),
-	   ('G002', 'Topazz', '01-888-50-1061', '16 Maple Lane', 'Auburn', 'WA', '98002', '253-555-2591', 'www.topazz.com', ''),
+	   ('G002', 'Topazz', '01-888-50-1061', '16 Maple Lane', 'Auburn', 'WA', '98002', '253-555-2591', 'www.topazz.com', NULL),
 	   ('G003', 'JV & the Deep Six', '01-888-18-1013', '15127 NE', 'Redmond', 'WA', '98052', '253-555-2511', 'www.jvd6.com', 'jv@myspring.com'),
-	   ('G004', 'Jim Glynn', '01-888-26-1025', '13920 S.E. 40th Street', 'Bellevue', 'WA', '98009', '253-555-2531', '', ''),
-	   ('G005', 'Jazz Persuasion', '01-888-30-1031', '233 West Valley Hwy', 'Bellevue', 'WA', '98005', '253-555-2541', 'www.jazzper.com', ''),
+	   ('G004', 'Jim Glynn', '01-888-26-1025', '13920 S.E. 40th Street', 'Bellevue', 'WA', '98009', '253-555-2531', NULL, NULL),
+	   ('G005', 'Jazz Persuasion', '01-888-30-1031', '233 West Valley Hwy', 'Bellevue', 'WA', '98005', '253-555-2541', 'www.jazzper.com', NULL),
 	   ('G006', 'Modern Dance', '01-888-66-1085', 'Route 2, Box 203B', 'Woodinville', 'WA', '98072', '253-555-2631', 'www.moderndance.com', 'mikeh@moderndance.com'),
-	   ('G007', 'Coldwater Cattle Company', '01-888-38-1043', '4726 - 11th Ave. N.E.', 'Seattle', 'WA', '98105', '253-555-2561', 'www.coldwatercows.com', ''),
-	   ('G008', 'Country Feeling', '01-888-98-1133', 'PO Box 223311', 'Seattle', 'WA', '98125', '253-555-2711', '', ''),
-	   ('G009', 'Katherine Ehrlich', '01-888-61-1103', '777 Fenexet Blvd', 'Woodinville', 'WA', '98072', '253-555-0399', '', 'ke@mzo.com'),
+	   ('G007', 'Coldwater Cattle Company', '01-888-38-1043', '4726 - 11th Ave. N.E.', 'Seattle', 'WA', '98105', '253-555-2561', 'www.coldwatercows.com', NULL),
+	   ('G008', 'Country Feeling', '01-888-98-1133', 'PO Box 223311', 'Seattle', 'WA', '98125', '253-555-2711', NULL, NULL),
+	   ('G009', 'Katherine Ehrlich', '01-888-61-1103', '777 Fenexet Blvd', 'Woodinville', 'WA', '98072', '253-555-0399', NULL, 'ke@mzo.com'),
 	   ('G010', 'Saturday Revue', '01-888-64-1109', '3887 Easy Street', 'Seattle', 'WA', '98125', '253-555-0039', 'www.satrevue.com', 'edz@coolness.com'),
-	   ('G011', 'Julia Schnebly', '01-888-65-1111', '2343 Harmony Lane', 'Seattle', 'WA', '99837', '253-555-9936', '', ''),
+	   ('G011', 'Julia Schnebly', '01-888-65-1111', '2343 Harmony Lane', 'Seattle', 'WA', '99837', '253-555-9936', NULL, NULL),
 	   ('G012', 'Susan McLain', '01-888-70-1121', '511 Lenora Ave', 'Bellevue', 'WA', '98006', '253-555-2301', 'www.greensleeves.com', 'susan@gs.com'),
-	   ('G013', 'Caroline Coie Cuartet', '01-888-71-1123', '298 Forest Lane', 'Auburn', 'WA', '98002', '253-555-2306', '', 'carolinec@willow.com');
-
+	   ('G013', 'Caroline Coie Cuartet', '01-888-71-1123', '298 Forest Lane', 'Auburn', 'WA', '98002', '253-555-2306', NULL, 'carolinec@willow.com');
 GO
 
 INSERT INTO Engagements(EngagementKey, EngStartDate, EngEndDate, EngStartTime, EngEndTime, EngContractPrice, CustomerKey, AgentKey, GroupKey)
