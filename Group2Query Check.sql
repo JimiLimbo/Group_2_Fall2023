@@ -10,6 +10,7 @@ ORDER BY CustCity, [Customer Name];
 
 --3. Create a list of when an agent received their first review (180 days after being hired)
 SELECT AgentFirstName + ' ' + AgentLastName AS [Agent Name],
+	   AgentDateHired,
        DATEADD(DAY, 180, AgentDateHired) AS [First Review Date]
 FROM Agents
 ORDER BY [First Review Date];
@@ -17,6 +18,9 @@ ORDER BY [First Review Date];
 --4. Create a report of the net price per contract
 SELECT 
     E.EngagementKey,
+	CAST(E.EngContractPrice AS DECIMAL(10,2)) AS [Contract Price],
+	A.AgentCommissionRate AS [Agent Commission Rate],
+	CAST(ROUND(E.EngContractPrice * A.AgentCommissionRate, 2) AS DECIMAL(10,2)) AS [Agent Commission Amount],
     CAST(ROUND(E.EngContractPrice - (E.EngContractPrice * A.AgentCommissionRate), 2) AS DECIMAL(10,2)) AS [Net Price Per Contract]
 FROM 
     Engagements E
@@ -24,9 +28,12 @@ JOIN
     Agents A ON E.AgentKey = A.AgentKey
 ORDER BY 
     E.EngagementKey;
+
 --5. Create a report of all engagements that last more than 3 days
 SELECT 
     EngagementKey,
+	CAST(EngStartDateTime AS DATE) AS [Start Date],
+	CAST(EngEndDateTime AS DATE) AS [End Date],
     DATEDIFF(DAY, EngStartDateTime, EngEndDateTime) AS [Duration In Days]
 FROM 
     Engagements
@@ -38,6 +45,8 @@ ORDER BY
 --6. Create a report of all October engagements that occurred in 2022
 SELECT 
     EngagementKey,
+	GroupKey,
+	CustomerKey,
     CONVERT(VARCHAR, EngStartDateTime, 23) AS EngStartDate,
     CONVERT(VARCHAR, EngEndDateTime, 23) AS EngEndDate
 FROM 
@@ -50,6 +59,8 @@ ORDER BY
 --7. Create a report of all October engagements that occurred between noon and 5 PM
 SELECT 
     EngagementKey,
+	GroupKey,
+	CustomerKey,
     LEFT(CONVERT(VARCHAR, EngStartDateTime, 108), 5) AS [Start Time],
     LEFT(CONVERT(VARCHAR, EngEndDateTime, 108), 5) AS [End Time]
 FROM 
@@ -63,7 +74,8 @@ ORDER BY
 --8.. Create a list of all customers and the groups they have booked
 SELECT 
     C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
-    G.GroupStageName AS [Group Booked]
+    G.GroupStageName AS [Group Booked],
+	E.EngagementKey
 FROM Customers C
 JOIN Engagements E ON C.CustomerKey = E.CustomerKey
 JOIN Groups G ON E.GroupKey = G.GroupKey
@@ -88,7 +100,7 @@ ORDER BY [Customer Name];
 --11. Create a list of each customer's last booking
 SELECT 
     C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
-    MAX(E.EngStartDateTime) AS [Last Booking]
+    MAX(E.EngStartDateTime) AS [Last Booking],
 FROM Customers C
 JOIN Engagements E ON C.CustomerKey = E.CustomerKey                   
 GROUP BY C.CustFirstName, C.CustLastName
@@ -96,12 +108,14 @@ ORDER BY [Last Booking] DESC;
 
 --12. Create a list of customers who like Country or Country Rock
 SELECT DISTINCT
-    C.CustFirstName + ' ' + C.CustLastName AS [Customer Name]
+    C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
+	StyleName,
+	StylePreferenceRating
 FROM Customers C
 JOIN CustomerPreference CP ON C.CustomerKey = CP.CustomerKey
 JOIN MusicStyle MS ON CP.StyleKey = MS.StyleKey
 WHERE MS.StyleName IN ('Country', 'Country Rock')
-ORDER BY [Customer Name];
+ORDER BY [Customer Name],StylePreferenceRating;
 
 --13. Create a report of the number of engagements each group has performed
 SELECT 
@@ -139,6 +153,7 @@ WHERE
 SELECT 
     A.AgentFirstName + ' ' + A.AgentLastName AS [Agent Name],
     CAST(SUM(E.EngContractPrice) AS DECIMAL(10, 2)) AS [Total Sales],
+	A.AgentCommissionRate,
     CAST(SUM(E.EngContractPrice) * A.AgentCommissionRate AS DECIMAL(10, 2)) AS [Total Commission]
 FROM Agents A
 LEFT JOIN Engagements E ON A.AgentKey = E.AgentKey
@@ -146,10 +161,12 @@ GROUP BY
     A.AgentFirstName, 
     A.AgentLastName, 
     A.AgentCommissionRate;
+
 --18. Show only those agents who have a commission greater than $1000
 SELECT 
     A.AgentFirstName + ' ' + A.AgentLastName AS [Agent Name],
-    --SUM(E.EngContractPrice) AS TotalSales,
+    CAST(SUM(E.EngContractPrice) AS DECIMAL(10, 2)) AS [Total Sales],
+	A.AgentCommissionRate,
     CAST(SUM(E.EngContractPrice) * A.AgentCommissionRate AS DECIMAL(10, 2)) AS [Total Commission]
 FROM Agents A
 LEFT JOIN Engagements E ON A.AgentKey = E.AgentKey
