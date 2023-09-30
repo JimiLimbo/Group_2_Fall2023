@@ -17,8 +17,6 @@ ORDER BY [First Review Date];
 --4. Create a report of the net price per contract
 SELECT 
     E.EngagementKey,
-    E.EngContractPrice,
-    A.AgentCommissionRate,
     CAST(ROUND(E.EngContractPrice - (E.EngContractPrice * A.AgentCommissionRate), 2) AS DECIMAL(10,2)) AS [Net Price Per Contract]
 FROM 
     Engagements E
@@ -29,48 +27,47 @@ ORDER BY
 --5. Create a report of all engagements that last more than 3 days
 SELECT 
     EngagementKey,
-    DATEDIFF(DAY, EngStartDate, EngEndDate) AS [Duration In Days]
+    DATEDIFF(DAY, EngStartDateTime, EngEndDateTime) AS [Duration In Days]
 FROM 
     Engagements
 WHERE 
-    DATEDIFF(DAY, EngStartDate, EngEndDate) > 3
+    DATEDIFF(DAY, EngStartDateTime, EngEndDateTime) > 3
 ORDER BY 
-    EngStartDate, EngEndDate;
+    EngagementKey;
 
 --6. Create a report of all October engagements that occurred in 2022
 SELECT 
     EngagementKey,
-    EngStartDate,
-    EngEndDate
+    CONVERT(VARCHAR, EngStartDateTime, 23) AS EngStartDate,
+    CONVERT(VARCHAR, EngEndDateTime, 23) AS EngEndDate
 FROM 
     Engagements
 WHERE 
-    YEAR(EngStartDate) = 2022 AND MONTH(EngStartDate) = 10
+    YEAR(EngStartDateTime) = 2022 AND MONTH(EngStartDateTime) = 10
 ORDER BY 
-    EngStartDate;
+    EngStartDateTime;
+
 --7. Create a report of all October engagements that occurred between noon and 5 PM
 SELECT 
     EngagementKey,
-    EngStartDate,
-    EngEndDate,
-    LEFT(CONVERT(VARCHAR, EngStartTime, 108), 5) AS [Start Time],
-    LEFT(CONVERT(VARCHAR, EngEndTime, 108), 5) AS [End Time]
+    LEFT(CONVERT(VARCHAR, EngStartDateTime, 108), 5) AS [Start Time],
+    LEFT(CONVERT(VARCHAR, EngEndDateTime, 108), 5) AS [End Time]
 FROM 
     Engagements
 WHERE 
-    YEAR(EngStartDate) = 2022 AND MONTH(EngStartDate) = 10
-    AND EngStartTime >= '12:00' AND EngStartTime <= '17:00'
+    MONTH(EngStartDateTime) = 10
+    AND CAST(EngStartDateTime AS TIME) >= '12:00:00' AND CAST(EngStartDateTime AS TIME) <= '17:00:00'
 ORDER BY 
-    EngStartDate, EngStartTime;
+    EngStartDateTime;
 
 --8.. Create a list of all customers and the groups they have booked
 SELECT 
-    C.CustFirstName + ' ' + C.CustLastName AS CustomerName,
-    G.GroupStageName AS GroupBooked
+    C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
+    G.GroupStageName AS [Group Booked]
 FROM Customers C
 JOIN Engagements E ON C.CustomerKey = E.CustomerKey
 JOIN Groups G ON E.GroupKey = G.GroupKey
-ORDER BY CustomerName, GroupBooked;
+ORDER BY [Customer Name], [Group Booked];
 
 --9. Create a list of all agents that have no contracts
 SELECT 
@@ -91,11 +88,11 @@ ORDER BY [Customer Name];
 --11. Create a list of each customer's last booking
 SELECT 
     C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
-    MAX(E.EngStartDate) AS [Last Booking Date]
+    MAX(E.EngStartDateTime) AS [Last Booking]
 FROM Customers C
-JOIN Engagements E ON C.CustomerKey = E.CustomerKey
+JOIN Engagements E ON C.CustomerKey = E.CustomerKey                   
 GROUP BY C.CustFirstName, C.CustLastName
-ORDER BY [Last Booking Date] DESC;
+ORDER BY [Last Booking] DESC;
 
 --12. Create a list of customers who like Country or Country Rock
 SELECT DISTINCT
@@ -121,26 +118,28 @@ SELECT
 FROM Agents;
 
 --15. Show our earliest October engagement in 2022
-SELECT 
-    MIN(EngStartDate) AS [Earliest October Engagement]
+SELECT TOP 1
+    EngagementKey,
+    EngStartDateTime AS [Earliest October Engagement]
 FROM Engagements
 WHERE 
-    YEAR(EngStartDate) = 2022 
-    AND MONTH(EngStartDate) = 10;
+    YEAR(EngStartDateTime) = 2022 
+    AND MONTH(EngStartDateTime) = 10
+ORDER BY EngStartDateTime;
 
 --16. Show the value of our October 2022 bookings
 SELECT 
-    SUM(EngContractPrice) AS [Total Value Of October 2022 Bookings]
+    CAST(ROUND(SUM(EngContractPrice), 2) AS DECIMAL(10, 2)) AS [Total Value Of October 2022 Bookings]
 FROM Engagements
 WHERE 
-    YEAR(EngStartDate) = 2022 
-    AND MONTH(EngStartDate) = 10;
+    YEAR(EngStartDateTime) = 2022 
+    AND MONTH(EngStartDateTime) = 10;
 
 --17. Create a report of agent sales and commissions
 SELECT 
     A.AgentFirstName + ' ' + A.AgentLastName AS [Agent Name],
-    SUM(E.EngContractPrice) AS TotalSales,
-    CAST(SUM(E.EngContractPrice) * A.AgentCommissionRate AS DECIMAL(10, 2)) AS TotalCommission
+    CAST(SUM(E.EngContractPrice) AS DECIMAL(10, 2)) AS [Total Sales],
+    CAST(SUM(E.EngContractPrice) * A.AgentCommissionRate AS DECIMAL(10, 2)) AS [Total Commission]
 FROM Agents A
 LEFT JOIN Engagements E ON A.AgentKey = E.AgentKey
 GROUP BY 
