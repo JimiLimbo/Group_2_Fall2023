@@ -90,7 +90,7 @@ SELECT
     C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
     MAX(E.EngStartDateTime) AS [Last Booking]
 FROM Customers C
-JOIN Engagements E ON C.CustomerKey = E.CustomerKey                    --Do we want just date???
+JOIN Engagements E ON C.CustomerKey = E.CustomerKey                   
 GROUP BY C.CustFirstName, C.CustLastName
 ORDER BY [Last Booking] DESC;
 
@@ -134,7 +134,6 @@ FROM Engagements
 WHERE 
     YEAR(EngStartDateTime) = 2022 
     AND MONTH(EngStartDateTime) = 10;
-
 
 --17. Create a report of agent sales and commissions
 SELECT 
