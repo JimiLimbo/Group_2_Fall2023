@@ -61,8 +61,8 @@ SELECT
     EngagementKey,
 	GroupKey,
 	CustomerKey,
-    LEFT(CONVERT(VARCHAR, EngStartDateTime, 108), 5) AS [Start Time],
-    LEFT(CONVERT(VARCHAR, EngEndDateTime, 108), 5) AS [End Time]
+	EngStartDateTime,
+	EngEndDateTime
 FROM 
     Engagements
 WHERE 
