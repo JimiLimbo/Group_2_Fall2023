@@ -100,7 +100,7 @@ ORDER BY [Customer Name];
 --11. Create a list of each customer's last booking
 SELECT 
     C.CustFirstName + ' ' + C.CustLastName AS [Customer Name],
-    MAX(E.EngStartDateTime) AS [Last Booking],
+    MAX(E.EngStartDateTime) AS [Last Booking]
 FROM Customers C
 JOIN Engagements E ON C.CustomerKey = E.CustomerKey                   
 GROUP BY C.CustFirstName, C.CustLastName
