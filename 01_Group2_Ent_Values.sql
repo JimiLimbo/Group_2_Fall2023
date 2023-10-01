@@ -1,79 +1,78 @@
---add data
-INSERT INTO Agents(AgentKey, AgentFirstName, AgentLastName, AgentStreetAddress, AgentCity, AgentState, AgentZip, AgentPhone, AgentDateHired, AgentSalary, AgentCommissionRate)
-VALUES ('A001', 'William', 'Thompson', '122 Spring River Drive', 'Redmond', 'WA', '98053', '253-555-2681', '2018-05-10', 45000.00, 0.04),
-	   ('A002', 'Scott', 'Bishop', '66 Spring Valley Drive', 'Seattle', 'WA', '98125', '253-555-2666', '2019-01-31', 37000.00, 0.04),
-	   ('A003', 'Carol', 'Viescas', '667 Red River Road', 'Bellevue', 'WA', '98006', '253-555-2571', '2018-11-14', 40000.00, 0.05),
-	   ('A004', 'Karen', 'Smith', '30301 166th Ave. N.E.', 'Seattle', 'WA', '98125', '253-555-2551', '2019-02-28', 32000.00, 0.055),
-	   ('A005', 'Marianne', 'Wier', '908 W. Capital Way', 'Tacoma', 'WA', '98413', '253-555-2606', '2019-01-28', 34500.00, 0.045),
-	   ('A006', 'John', 'Kennedy', '16679 NE 41st Court', 'Seattle', 'WA', '98125', '253-555-2621', '2018-05-10', 43000.00, 0.06),
-	   ('A007', 'Caleb', 'Viescas', '4501 Wetland Road', 'Redmond', 'WA', '98052', '253-555-0037', '2019-02-11', 32100.00, 0.035),
-	   ('A008', 'Maria', 'Patterson', '3445 Cheyenne Road', 'Bellevue', 'WA', '98006', '253-555-2291', '2018-08-29', 40000.00, 0.04),
-	   ('A009', 'Darryl', 'Mars', '1234 Main Street', 'Kirkland', 'WA', '98033', '253-555-1234', '2021-01-30', 50.00, 0.01);
-GO
-
-INSERT INTO MusicStyle(StyleKey, StyleName)
-VALUES ('S001', '40''s Ballroom Music'),
-       ('S002', '50''s Music'),
-       ('S003', '60''s Music'),
-       ('S004', '70''s Music'),
-       ('S005', '80''s Music'),
-       ('S006', 'Country'),
-       ('S007', 'Classical'),
-       ('S008', 'Classic Rock & Roll'),
-       ('S009', 'Rap'),
-       ('S010', 'Contemporary'),
-       ('S011', 'Country Rock'),
-       ('S012', 'Elvis'),
-       ('S013', 'Folk'),
-       ('S014', 'Chamber Music'),
-       ('S015', 'Jazz'),
-       ('S016', 'Karaoke'),
-       ('S017', 'Motown'),
-       ('S018', 'Modern Rock'),
-       ('S019', 'Rhythm and Blues'),
-       ('S020', 'Show Tunes'),
-       ('S021', 'Standards'),
-       ('S022', 'Top 40 Hits'),
-       ('S023', 'Variety'),
-       ('S024', 'Salsa'),
-       ('S025', '90''s Music');
-GO
-
-INSERT INTO Customers(CustomerKey, CustFirstName, CustLastName, CustStreetAddress, CustCity, CustState, CustZip)
-VALUES ('C001', 'Doris', 'Hartwig', '4726 11th Ave. N.E.', 'Seattle', 'WA', '98105'),
-	   ('C002', 'Deb', 'Waldal', '908 W. Capital Way', 'Tacoma', 'WA', '98413'),
-	   ('C003', 'Peter', 'Brehm', '722 Moss Bay Blvd.', 'Kirkland', 'WA', '98033'),
-	   ('C004', 'Dean', 'McCrae', '4110 Old Redmond Rd.', 'Redmond', 'WA', '98052'),
-	   ('C005', 'Elizabeth','Hallmark', 'Route 2, Box 203B', 'Auburn', 'WA', '98002'),
-	   ('C006', 'Matt', 'Berg', '908 W. Capital Way', 'Tacoma', 'WA', '98413'),
-	   ('C007', 'Liz', 'Keyser', '13920 S.E. 40th Street', 'Bellevue', 'WA', '98006'),
-	   ('C008', 'Darren', 'Gehring', '2601 Seaview Lane', 'Kirkland', 'WA', '98033'),
-	   ('C009', 'Sarah', 'Thompson', '2222 Springer Road', 'Bellevue', 'WA', '98006'),
-	   ('C010', 'Zachary', 'Ehrlich', '12330 Kingman Drive', 'Kirkland', 'WA', '98033'),
-	   ('C011', 'Joyce', 'Bonnicksen', '2424 Thames Drive', 'Bellevue', 'WA', '98006'),
-	   ('C012', 'Kerry', 'Patterson', '777 Fenexet Blvd', 'Redmond', 'WA', 	'98052'),
-	   ('C013', 'Estella', 'Pundt', '2500 Rosales Lane', 'Bellevue', 'WA', '98006'),
-	   ('C014', 'Mark', 'Rosales', '323 Advocate Lane', 'Bellevue', 'WA', '98006'),
-	   ('C015', 'Carol', 'Viescas', '754 Fourth Ave', 'Seattle', 'WA', '98115');
-GO
-
-INSERT INTO Groups(GroupKey, GroupStageName, GroupTIN, GroupStreetAddress, GroupCity, GroupState, GroupZip, GroupPhone, GroupWebpage, GroupEmail)
-VALUES ('G001', 'Carol Peacock Trio', '01-888-90-1121', '4110 Old Redmond Rd.', 'Redmond', 'WA', '98052', '253-555-2691', 'www.cptrio.com', 'carolp@cptrio.com'),
-	   ('G002', 'Topazz', '01-888-50-1061', '16 Maple Lane', 'Auburn', 'WA', '98002', '253-555-2591', 'www.topazz.com', NULL),
-	   ('G003', 'JV & the Deep Six', '01-888-18-1013', '15127 NE', 'Redmond', 'WA', '98052', '253-555-2511', 'www.jvd6.com', 'jv@myspring.com'),
-	   ('G004', 'Jim Glynn', '01-888-26-1025', '13920 S.E. 40th Street', 'Bellevue', 'WA', '98009', '253-555-2531', NULL, NULL),
-	   ('G005', 'Jazz Persuasion', '01-888-30-1031', '233 West Valley Hwy', 'Bellevue', 'WA', '98005', '253-555-2541', 'www.jazzper.com', NULL),
-	   ('G006', 'Modern Dance', '01-888-66-1085', 'Route 2, Box 203B', 'Woodinville', 'WA', '98072', '253-555-2631', 'www.moderndance.com', 'mikeh@moderndance.com'),
-	   ('G007', 'Coldwater Cattle Company', '01-888-38-1043', '4726 - 11th Ave. N.E.', 'Seattle', 'WA', '98105', '253-555-2561', 'www.coldwatercows.com', NULL),
-	   ('G008', 'Country Feeling', '01-888-98-1133', 'PO Box 223311', 'Seattle', 'WA', '98125', '253-555-2711', NULL, NULL),
-	   ('G009', 'Katherine Ehrlich', '01-888-61-1103', '777 Fenexet Blvd', 'Woodinville', 'WA', '98072', '253-555-0399', NULL, 'ke@mzo.com'),
-	   ('G010', 'Saturday Revue', '01-888-64-1109', '3887 Easy Street', 'Seattle', 'WA', '98125', '253-555-0039', 'www.satrevue.com', 'edz@coolness.com'),
-	   ('G011', 'Julia Schnebly', '01-888-65-1111', '2343 Harmony Lane', 'Seattle', 'WA', '99837', '253-555-9936', NULL, NULL),
-	   ('G012', 'Susan McLain', '01-888-70-1121', '511 Lenora Ave', 'Bellevue', 'WA', '98006', '253-555-2301', 'www.greensleeves.com', 'susan@gs.com'),
-	   ('G013', 'Caroline Coie Cuartet', '01-888-71-1123', '298 Forest Lane', 'Auburn', 'WA', '98002', '253-555-2306', NULL, 'carolinec@willow.com');
-GO
-
 USE [HighbrowEntertainment]
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A001', N'William', N'Thompson', N'122 Spring River Drive', N'Redmond', N'WA', N'98053', N'253-555-2681', CAST(N'2018-05-10' AS Date), CAST(45000.0000 AS Decimal(14, 4)), CAST(0.0400 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A002', N'Scott', N'Bishop', N'66 Spring Valley Drive', N'Seattle', N'WA', N'98125', N'253-555-2666', CAST(N'2019-01-31' AS Date), CAST(37000.0000 AS Decimal(14, 4)), CAST(0.0400 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A003', N'Carol', N'Viescas', N'667 Red River Road', N'Bellevue', N'WA', N'98006', N'253-555-2571', CAST(N'2018-11-14' AS Date), CAST(40000.0000 AS Decimal(14, 4)), CAST(0.0500 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A004', N'Karen', N'Smith', N'30301 166th Ave. N.E.', N'Seattle', N'WA', N'98125', N'253-555-2551', CAST(N'2019-02-28' AS Date), CAST(32000.0000 AS Decimal(14, 4)), CAST(0.0550 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A005', N'Marianne', N'Wier', N'908 W. Capital Way', N'Tacoma', N'WA', N'98413', N'253-555-2606', CAST(N'2019-01-28' AS Date), CAST(34500.0000 AS Decimal(14, 4)), CAST(0.0450 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A006', N'John', N'Kennedy', N'16679 NE 41st Court', N'Seattle', N'WA', N'98125', N'253-555-2621', CAST(N'2018-05-10' AS Date), CAST(43000.0000 AS Decimal(14, 4)), CAST(0.0600 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A007', N'Caleb', N'Viescas', N'4501 Wetland Road', N'Redmond', N'WA', N'98052', N'253-555-0037', CAST(N'2019-02-11' AS Date), CAST(32100.0000 AS Decimal(14, 4)), CAST(0.0350 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A008', N'Maria', N'Patterson', N'3445 Cheyenne Road', N'Bellevue', N'WA', N'98006', N'253-555-2291', CAST(N'2018-08-29' AS Date), CAST(40000.0000 AS Decimal(14, 4)), CAST(0.0400 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Agents] ([AgentKey], [AgentFirstName], [AgentLastName], [AgentStreetAddress], [AgentCity], [AgentState], [AgentZip], [AgentPhone], [AgentDateHired], [AgentSalary], [AgentCommissionRate]) VALUES (N'A009', N'Darryl', N'Mars', N'1234 Main Street', N'Kirkland', N'WA', N'98033', N'253-555-1234', CAST(N'2021-01-30' AS Date), CAST(50.0000 AS Decimal(14, 4)), CAST(0.0100 AS Decimal(14, 4)))
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C001', N'Doris', N'Hartwig', N'4726 11th Ave. N.E.', N'Seattle', N'WA', N'98105')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C002', N'Deb', N'Waldal', N'908 W. Capital Way', N'Tacoma', N'WA', N'98413')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C003', N'Peter', N'Brehm', N'722 Moss Bay Blvd.', N'Kirkland', N'WA', N'98033')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C004', N'Dean', N'McCrae', N'4110 Old Redmond Rd.', N'Redmond', N'WA', N'98052')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C005', N'Elizabeth', N'Hallmark', N'Route 2, Box 203B', N'Auburn', N'WA', N'98002')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C006', N'Matt', N'Berg', N'908 W. Capital Way', N'Tacoma', N'WA', N'98413')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C007', N'Liz', N'Keyser', N'13920 S.E. 40th Street', N'Bellevue', N'WA', N'98006')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C008', N'Darren', N'Gehring', N'2601 Seaview Lane', N'Kirkland', N'WA', N'98033')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C009', N'Sarah', N'Thompson', N'2222 Springer Road', N'Bellevue', N'WA', N'98006')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C010', N'Zachary', N'Ehrlich', N'12330 Kingman Drive', N'Kirkland', N'WA', N'98033')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C011', N'Joyce', N'Bonnicksen', N'2424 Thames Drive', N'Bellevue', N'WA', N'98006')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C012', N'Kerry', N'Patterson', N'777 Fenexet Blvd', N'Redmond', N'WA', N'98052')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C013', N'Estella', N'Pundt', N'2500 Rosales Lane', N'Bellevue', N'WA', N'98006')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C014', N'Mark', N'Rosales', N'323 Advocate Lane', N'Bellevue', N'WA', N'98006')
+GO
+INSERT [dbo].[Customers] ([CustomerKey], [CustFirstName], [CustLastName], [CustStreetAddress], [CustCity], [CustState], [CustZip]) VALUES (N'C015', N'Carol', N'Viescas', N'754 Fourth Ave', N'Seattle', N'WA', N'98115')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G001', N'Carol Peacock Trio', N'01-888-90-1121', N'4110 Old Redmond Rd.', N'Redmond', N'WA', N'98052', N'253-555-2691', N'www.cptrio.com', N'carolp@cptrio.com')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G002', N'Topazz', N'01-888-50-1061', N'16 Maple Lane', N'Auburn', N'WA', N'98002', N'253-555-2591', N'www.topazz.com', NULL)
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G003', N'JV & the Deep Six', N'01-888-18-1013', N'15127 NE', N'Redmond', N'WA', N'98052', N'253-555-2511', N'www.jvd6.com', N'jv@myspring.com')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G004', N'Jim Glynn', N'01-888-26-1025', N'13920 S.E. 40th Street', N'Bellevue', N'WA', N'98009', N'253-555-2531', NULL, NULL)
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G005', N'Jazz Persuasion', N'01-888-30-1031', N'233 West Valley Hwy', N'Bellevue', N'WA', N'98005', N'253-555-2541', N'www.jazzper.com', NULL)
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G006', N'Modern Dance', N'01-888-66-1085', N'Route 2, Box 203B', N'Woodinville', N'WA', N'98072', N'253-555-2631', N'www.moderndance.com', N'mikeh@moderndance.com')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G007', N'Coldwater Cattle Company', N'01-888-38-1043', N'4726 - 11th Ave. N.E.', N'Seattle', N'WA', N'98105', N'253-555-2561', N'www.coldwatercows.com', NULL)
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G008', N'Country Feeling', N'01-888-98-1133', N'PO Box 223311', N'Seattle', N'WA', N'98125', N'253-555-2711', NULL, NULL)
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G009', N'Katherine Ehrlich', N'01-888-61-1103', N'777 Fenexet Blvd', N'Woodinville', N'WA', N'98072', N'253-555-0399', NULL, N'ke@mzo.com')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G010', N'Saturday Revue', N'01-888-64-1109', N'3887 Easy Street', N'Seattle', N'WA', N'98125', N'253-555-0039', N'www.satrevue.com', N'edz@coolness.com')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G011', N'Julia Schnebly', N'01-888-65-1111', N'2343 Harmony Lane', N'Seattle', N'WA', N'99837', N'253-555-9936', NULL, NULL)
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G012', N'Susan McLain', N'01-888-70-1121', N'511 Lenora Ave', N'Bellevue', N'WA', N'98006', N'253-555-2301', N'www.greensleeves.com', N'susan@gs.com')
+GO
+INSERT [dbo].[Groups] ([GroupKey], [GroupStageName], [GroupTIN], [GroupStreetAddress], [GroupCity], [GroupState], [GroupZip], [GroupPhone], [GroupWebpage], [GroupEmail]) VALUES (N'G013', N'Caroline Coie Cuartet', N'01-888-71-1123', N'298 Forest Lane', N'Auburn', N'WA', N'98002', N'253-555-2306', NULL, N'carolinec@willow.com')
 GO
 INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00001', CAST(N'2022-09-01T13:00:00.000' AS DateTime), CAST(N'2022-09-05T15:00:00.000' AS DateTime), CAST(200.0000 AS Decimal(14, 4)), N'C006', N'A004', N'G004')
 GO
@@ -297,149 +296,319 @@ INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime
 GO
 INSERT [dbo].[Engagements] ([EngagementKey], [EngStartDateTime], [EngEndDateTime], [EngContractPrice], [CustomerKey], [AgentKey], [GroupKey]) VALUES (N'E00111', CAST(N'2023-03-03T15:00:00.000' AS DateTime), CAST(N'2023-03-12T17:00:00.000' AS DateTime), CAST(1850.0000 AS Decimal(14, 4)), N'C014', N'A001', N'G003')
 GO
-
-
-INSERT INTO Members (MemberKey, MemberFirstName, MemberLastName, MemberPhone, MemberGender)
-VALUES  ('M001', 'David', 'Hamilton', '253-555-2701', 'M'),
-		('M002', 'Suzanne', 'Viescas', '253-555-2686', 'F'),
-		('M003', 'Gary', 'Hallmark', '253-555-2676', 'M'),
-		('M004', 'Jeffrey', 'Smith', '253-555-2596', 'M'),
-		('M005', 'Robert', 'Brown', '253-555-2491', 'M'),
-		('M006', 'Mariya', 'Sergienko', '253-555-2526', 'F'),
-		('M007', 'Sara', 'Sheskey', '253-555-2566', 'F'),
-		('M008', 'Rachel', 'Patterson', '253-555-2546', 'F'),
-		('M009', 'David', 'Viescas', '253-555-2661', 'M'),
-		('M010', 'Manuela', 'Seidel', '253-555-2641', 'F'),
-		('M011', 'Kathryn', 'Patterson', '253-555-2651', 'F'),
-		('M012', 'Kendra', 'Bonnicksen', '253-555-2716', 'F'),
-		('M013', 'Steve', 'Pundt', '253-555-9938', 'M'),
-		('M014', 'George', 'Chavez', '253-555-9930', 'M'),
-		('M015', 'Joe', 'Rosales', '253-555-2281', 'M'),
-		('M016', 'Angel', 'Kennedy', '253-555-2311', 'M'),
-		('M017', 'Luke', 'Patterson', '253-555-2316', 'M'),
-		('M018', 'Janice', 'Galvin', '253-555-2691', 'F'),
-		('M019', 'John', 'Viescas', '253-555-2511', 'M'),
-		('M020', 'Michael', 'Hernandez', '253-555-2711', 'M'),
-		('M021', 'Katherine', 'Ehrlich', '253-555-0399', 'F'),
-		('M022', 'Julia', 'Schnebly', '253-555-9936', 'F'),
-		('M023', 'Susan', 'McLain', '253-555-2301', 'F'),
-		('M024', 'Caroline', 'Coie', '253-555-2306', 'F'),
-		('M025', 'Jim', 'Glynn', '253-555-2531', 'M');
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S001', N'40''s Ballroom Music')
 GO
-
-INSERT INTO GroupMember(GroupKey, MemberKey)
-VALUES  ('G001', 'M006'),
-		('G001', 'M007'),
-		('G001', 'M018'),
-		('G002', 'M020'),
-		('G002', 'M021'),
-		('G003', 'M002'),
-		('G003', 'M003'),
-		('G003', 'M004'),
-		('G003', 'M009'),
-		('G003', 'M017'),
-		('G003', 'M019'),
-		('G004', 'M025'),
-		('G005', 'M016'),
-		('G005', 'M020'),
-		('G005', 'M021'),
-		('G006', 'M004'),
-		('G006', 'M013'),
-		('G006', 'M018'),
-		('G006', 'M020'),
-		('G007', 'M001'),
-		('G007', 'M002'),
-		('G007', 'M005'),
-		('G007', 'M007'),
-		('G007', 'M010'),
-		('G008', 'M003'),
-		('G008', 'M005'),
-		('G008', 'M011'),
-		('G008', 'M014'),
-		('G008', 'M015'),
-		('G009', 'M021'),
-		('G010', 'M008'),
-		('G010', 'M012'),
-		('G010', 'M023'),
-		('G010', 'M024'),
-		('G011', 'M022'),
-		('G012', 'M023'),
-		('G013', 'M012'),
-		('G013', 'M014'),
-		('G013', 'M017'),
-		('G013', 'M024');
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S002', N'50''s Music')
 GO
-
-INSERT INTO CustomerPreference(CustomerKey, StyleKey, StylePreferenceRating)
-VALUES  ('C001', 'S010', 2),
-		('C001', 'S022', 1),
-		('C002', 'S003', 1),
-		('C002', 'S008', 2),
-		('C003', 'S017', 2),
-		('C003', 'S019', 1),
-		('C004', 'S015', 1),
-		('C004', 'S021', 2),
-		('C005', 'S007', 2),
-		('C005', 'S014', 1),
-		('C006', 'S013', 2),
-		('C006', 'S023', 1),
-		('C007', 'S004', 2),
-		('C007', 'S008', 1),
-		('C007', 'S019', 3),
-		('C008', 'S010', 1),
-		('C008', 'S021', 2),
-		('C009', 'S006', 2),
-		('C009', 'S011', 1),
-		('C009', 'S018', 3),
-		('C010', 'S015', 2),
-		('C010', 'S019', 1),
-		('C010', 'S024', 3),
-		('C011', 'S001', 2),
-		('C011', 'S007', 3),
-		('C011', 'S021', 1),
-		('C012', 'S010', 2),
-		('C012', 'S020', 1),
-		('C013', 'S015', 1),
-		('C013', 'S024', 2),
-		('C014', 'S005', 3),
-		('C014', 'S018', 2),
-		('C014', 'S022', 1),
-		('C015', 'S001', 3),
-		('C015', 'S020', 2),
-		('C015', 'S021', 1);
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S003', N'60''s Music')
 GO
-
-INSERT INTO GroupStyle(GroupKey, StyleKey, StyleStrength)
-VALUES  ('G001', 'S010', 2),
-		('G001', 'S020', 1),
-		('G001', 'S021', 3),
-		('G002', 'S017', 2),
-		('G002', 'S019', 1),
-		('G002', 'S023', 3),
-		('G003', 'S003', 1),
-		('G003', 'S008', 2),
-		('G004', 'S013', 1),
-		('G005', 'S015', 3),
-		('G005', 'S019', 1),
-		('G005', 'S024', 2),
-		('G006', 'S022', 3),
-		('G006', 'S023', 1),
-		('G006', 'S024', 2),
-		('G007', 'S006', 2),
-		('G007', 'S011', 1),
-		('G008', 'S003', 2),
-		('G008', 'S006', 1),
-		('G009', 'S007', 2),
-		('G009', 'S014', 1),
-		('G009', 'S021', 3),
-		('G010', 'S004', 2),
-		('G010', 'S021', 3),
-		('G010', 'S022', 1),
-		('G011', 'S007', 2),
-		('G011', 'S014', 1),
-		('G011', 'S020', 3),
-		('G012', 'S007', 2),
-		('G012', 'S013', 1),
-		('G013', 'S010', 2),
-		('G013', 'S015', 1);
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S004', N'70''s Music')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S005', N'80''s Music')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S006', N'Country')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S007', N'Classical')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S008', N'Classic Rock & Roll')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S009', N'Rap')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S010', N'Contemporary')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S011', N'Country Rock')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S012', N'Elvis')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S013', N'Folk')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S014', N'Chamber Music')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S015', N'Jazz')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S016', N'Karaoke')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S017', N'Motown')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S018', N'Modern Rock')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S019', N'Rhythm and Blues')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S020', N'Show Tunes')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S021', N'Standards')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S022', N'Top 40 Hits')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S023', N'Variety')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S024', N'Salsa')
+GO
+INSERT [dbo].[MusicStyle] ([StyleKey], [StyleName]) VALUES (N'S025', N'90''s Music')
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C001', N'S010', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C001', N'S022', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C002', N'S003', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C002', N'S008', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C003', N'S017', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C003', N'S019', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C004', N'S015', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C004', N'S021', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C005', N'S007', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C005', N'S014', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C006', N'S013', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C006', N'S023', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C007', N'S004', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C007', N'S008', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C007', N'S019', 3)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C008', N'S010', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C008', N'S021', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C009', N'S006', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C009', N'S011', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C009', N'S018', 3)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C010', N'S015', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C010', N'S019', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C010', N'S024', 3)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C011', N'S001', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C011', N'S007', 3)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C011', N'S021', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C012', N'S010', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C012', N'S020', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C013', N'S015', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C013', N'S024', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C014', N'S005', 3)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C014', N'S018', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C014', N'S022', 1)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C015', N'S001', 3)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C015', N'S020', 2)
+GO
+INSERT [dbo].[CustomerPreference] ([CustomerKey], [StyleKey], [StylePreferenceRating]) VALUES (N'C015', N'S021', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G001', N'S010', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G001', N'S020', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G001', N'S021', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G002', N'S017', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G002', N'S019', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G002', N'S023', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G003', N'S003', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G003', N'S008', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G004', N'S013', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G005', N'S015', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G005', N'S019', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G005', N'S024', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G006', N'S022', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G006', N'S023', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G006', N'S024', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G007', N'S006', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G007', N'S011', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G008', N'S003', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G008', N'S006', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G009', N'S007', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G009', N'S014', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G009', N'S021', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G010', N'S004', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G010', N'S021', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G010', N'S022', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G011', N'S007', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G011', N'S014', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G011', N'S020', 3)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G012', N'S007', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G012', N'S013', 1)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G013', N'S010', 2)
+GO
+INSERT [dbo].[GroupStyle] ([GroupKey], [StyleKey], [StyleStrength]) VALUES (N'G013', N'S015', 1)
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M001', N'David', N'Hamilton', N'253-555-2701', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M002', N'Suzanne', N'Viescas', N'253-555-2686', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M003', N'Gary', N'Hallmark', N'253-555-2676', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M004', N'Jeffrey', N'Smith', N'253-555-2596', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M005', N'Robert', N'Brown', N'253-555-2491', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M006', N'Mariya', N'Sergienko', N'253-555-2526', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M007', N'Sara', N'Sheskey', N'253-555-2566', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M008', N'Rachel', N'Patterson', N'253-555-2546', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M009', N'David', N'Viescas', N'253-555-2661', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M010', N'Manuela', N'Seidel', N'253-555-2641', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M011', N'Kathryn', N'Patterson', N'253-555-2651', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M012', N'Kendra', N'Bonnicksen', N'253-555-2716', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M013', N'Steve', N'Pundt', N'253-555-9938', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M014', N'George', N'Chavez', N'253-555-9930', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M015', N'Joe', N'Rosales', N'253-555-2281', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M016', N'Angel', N'Kennedy', N'253-555-2311', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M017', N'Luke', N'Patterson', N'253-555-2316', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M018', N'Janice', N'Galvin', N'253-555-2691', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M019', N'John', N'Viescas', N'253-555-2511', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M020', N'Michael', N'Hernandez', N'253-555-2711', N'M')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M021', N'Katherine', N'Ehrlich', N'253-555-0399', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M022', N'Julia', N'Schnebly', N'253-555-9936', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M023', N'Susan', N'McLain', N'253-555-2301', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M024', N'Caroline', N'Coie', N'253-555-2306', N'F')
+GO
+INSERT [dbo].[Members] ([MemberKey], [MemberFirstName], [MemberLastName], [MemberPhone], [MemberGender]) VALUES (N'M025', N'Jim', N'Glynn', N'253-555-2531', N'M')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G001', N'M006')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G001', N'M007')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G001', N'M018')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G002', N'M020')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G002', N'M021')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G003', N'M002')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G003', N'M003')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G003', N'M004')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G003', N'M009')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G003', N'M017')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G003', N'M019')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G004', N'M025')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G005', N'M016')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G005', N'M020')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G005', N'M021')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G006', N'M004')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G006', N'M013')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G006', N'M018')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G006', N'M020')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G007', N'M001')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G007', N'M002')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G007', N'M005')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G007', N'M007')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G007', N'M010')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G008', N'M003')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G008', N'M005')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G008', N'M011')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G008', N'M014')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G008', N'M015')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G009', N'M021')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G010', N'M008')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G010', N'M012')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G010', N'M023')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G010', N'M024')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G011', N'M022')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G012', N'M023')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G013', N'M012')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G013', N'M014')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G013', N'M017')
+GO
+INSERT [dbo].[GroupMember] ([GroupKey], [MemberKey]) VALUES (N'G013', N'M024')
 GO
